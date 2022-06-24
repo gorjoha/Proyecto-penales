@@ -106,12 +106,12 @@ function keyPressed() {
 }
 
 function mostrarPelota(pelota, index) {
-  if (pelota) {
-    pelota.display();
-    pelota.animate();
-    if (pelota.body.position.x >= width || pelota.body.position.y >= height - 50) {
+  if (pelotas) {
+    pelotas.display();
+    //pelotas.animate();
+    if (pelotas.body.position.x >= width || pelotas.body.position.y >= height - 50) {
       //DisparoSound.play()  
-      pelota.remove(index);
+      pelotas.remove(index);
       
     }
   }
@@ -122,6 +122,8 @@ function keyReleased() {
   if (keyCode === UP_ARROW && !isGameOver) {
     //SONIDO//pelotadisparo.play(); 
     pelota[pelota.length - 1].shoot();
+    console.log("disparo");
+    console.log(pelota.length);
   }
 }
 
